@@ -882,8 +882,13 @@ input.forEach(seat => {
   takenSeats.push((row * 8) + column)
 })
 
-for (let i = 8; i < 126 * 8; i += 1) {
-  if (!takenSeats.includes(i) && takenSeats.includes(i - 1) && takenSeats.includes(i + 1)) {
-    console.log(i)
+let i = 0
+let inputLength = 127 * 8
+for (i; i < inputLength; i += 1) {
+  if (!takenSeats.includes(i) && i > 7 && i < 126 * 8) {
+    if (takenSeats.includes(i - 1) && takenSeats.includes(i + 1)) {
+      console.log(i)
+      return
+    }
   }
 }
