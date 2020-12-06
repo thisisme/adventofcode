@@ -882,13 +882,21 @@ input.forEach(seat => {
   takenSeats.push((row * 8) + column)
 })
 
-let i = 0
-let inputLength = 127 * 8
-for (i; i < inputLength; i += 1) {
-  if (!takenSeats.includes(i) && i > 7 && i < 126 * 8) {
-    if (takenSeats.includes(i - 1) && takenSeats.includes(i + 1)) {
-      console.log(i)
-      return
-    }
-  }
-}
+// let i = 0
+// let inputLength = 127 * 8
+// for (i; i < inputLength; i += 1) {
+//   if (!takenSeats.includes(i) && i > 7 && i < 126 * 8) {
+//     if (takenSeats.includes(i - 1) && takenSeats.includes(i + 1)) {
+//       console.log(i)
+//       return
+//     }
+//   }
+// }
+// takenSeats.sort((a, b) => {
+//   return a - b
+// })
+let missingSeats = (takenSeats, l = true) => Array.from(Array(Math.max(...takenSeats)).keys()).map((n, i) => takenSeats.indexOf(i) < 0 && (!l || i > Math.min(...takenSeats)) ? i : null).filter(f => f)
+console.log(missingSeats(takenSeats))
+// const mySeat = takenSeats.filter((seat, i) => {
+//   console.log(seat)
+// })
