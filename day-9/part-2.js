@@ -1,8 +1,6 @@
 const input = require('./input.json')
 
-const lookingFor = 1492208709
-
-const findSum = (list) => {
+const findSum = (list, lookingFor) => {
   const listLength = list.length
   let i, j
   for (i = 0; i < listLength; i += 1) {
@@ -21,4 +19,5 @@ const findSum = (list) => {
   }
 }
 
-findSum(input)
+const lookingFor = 1492208709
+findSum(input, lookingFor)
