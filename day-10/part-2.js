@@ -3,7 +3,7 @@ const input = require('./input.json')
 input.sort((a, b) => a - b)
 
 const jumps = input.reduce((acc, joltage) => {
-    acc[jolt] =
+    acc[joltage] =
         (acc[joltage - 3] || 0) +
         (acc[joltage - 2] || 0) +
         (acc[joltage - 1] || 0)
