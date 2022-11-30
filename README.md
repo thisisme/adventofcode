@@ -3,6 +3,6 @@ https://adventofcode.com/2020
 
 ## How to run
 ```
-node [dir/file]
-eg. node day-1/part-1.js
+node [year/dir/file]
+eg. node 2020/day-1/part-1.js
 ```
